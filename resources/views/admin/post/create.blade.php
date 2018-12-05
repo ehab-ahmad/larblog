@@ -6,7 +6,7 @@
 	</div>
 
 	<div class="card-block">
-	<form action="/post/store" method="post">
+	<form action="{{route('storepost')}}" method="post">
 			@csrf
 	<div class="form-group">
  		<label for="title">Title</label>
