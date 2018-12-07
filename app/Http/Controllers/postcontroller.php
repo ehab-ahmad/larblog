@@ -34,6 +34,12 @@ class postcontroller extends Controller
      */
     public function store(Request $request)
     {
+       // dd($request->all());
+        $this->validate($request,[
+             'title'=>'required|max:255',
+             'content'=>'required',
+             'featuredimg'=>'required|image'
+        ]);
         dd($request->all());
     }
 
