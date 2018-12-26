@@ -25,5 +25,10 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function () {
 	Route::get('/category/create','categorycontroller@create')->name('create.category');
 	Route::post('/category/store','categorycontroller@store')->name('store.category');
 	Route::get('/categories','categorycontroller@index')-> name('categories');
+	Route::get('/category/edit/{id}','categorycontroller@edit')->name('category.edit');
+	Route::get('/category/delete/{id}','categorycontroller@destroy')->name('category.delete');
+	Route::post('category/update/{id}','categorycontroller@update')->name('category.update');
+
+	
 });
 
