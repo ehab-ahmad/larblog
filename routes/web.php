@@ -29,6 +29,12 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function () {
 	Route::get('/category/delete/{id}','categorycontroller@destroy')->name('category.delete');
 	Route::post('category/update/{id}','categorycontroller@update')->name('category.update');
 
+
+
+
+
+
 	
 });
+
 
