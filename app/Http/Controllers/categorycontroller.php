@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use Session;
 class categorycontroller extends Controller
 {
     /**
@@ -11,6 +12,7 @@ class categorycontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
             $cat=Category::all();
@@ -44,6 +46,7 @@ class categorycontroller extends Controller
         $cat->name=$request->name;
         $cat->save();
 
+        Session::flash('success','data added'); 
         return redirect()->back();
 
     }
