@@ -104,8 +104,16 @@
 <!-- TOASTER -->
 <script src="{{asset('js/toastr.min.js')}}"></script>
 <script>
-     @if (Session::has('success'))
-        toastr.info("{{ Session::get('success') }}")
+     @if (Session::has('add'))
+        toastr.success("{{ Session::get('add') }}")
+     @endif  
+
+     @if (Session::has('update'))
+        toastr.info("{{ Session::get('update') }}")
+     @endif 
+
+     @if (Session::has('delete'))
+        toastr.warning("{{ Session::get('delete') }}")
      @endif
 </script>
  

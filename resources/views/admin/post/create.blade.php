@@ -29,11 +29,21 @@
 		<label for="content">Content</label>
 		<textarea name="content" id="content" rows="5" class="form-control" ></textarea>
 	</div>
-
+	<div class="form-group">
+		<select name="category_id" class="c-select">
+			<option selected>Choose a Category</option>
+			@foreach ($cat as $catname)
+			<option  value="{{$catname->id}}">{{$catname->name}}</option>
+			@endforeach
+		</select>
+	</div>
 	<div class="form-group">
 		<label for="featuredimg">Content</label>
 		<input type="file" name="featuredimg" class="form-control">
 	</div>
+
+	
+
 	<div class="form-group text-center">
 		<button class="btn btn-danger" type="submit">Submit</button>
 	</div>

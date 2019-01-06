@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Category;
 class postcontroller extends Controller
 {
     /**
@@ -22,8 +22,8 @@ class postcontroller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('admin.post.create');
+    {   $cat=Category::all();
+        return view('admin.post.create')->with('cat',$cat);
     }
 
     /**
@@ -38,7 +38,8 @@ class postcontroller extends Controller
         $this->validate($request,[
              'title'=>'required|max:255',
              'content'=>'required',
-             'featuredimg'=>'required|image'
+             'featuredimg'=>'required|image',
+             'category_id'=>'required'
         ]);
         dd($request->all());
     }

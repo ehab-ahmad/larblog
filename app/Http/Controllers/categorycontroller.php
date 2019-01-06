@@ -46,7 +46,7 @@ class categorycontroller extends Controller
         $cat->name=$request->name;
         $cat->save();
 
-        Session::flash('success','data added'); 
+        Session::flash('add','Success! Data added'); 
         return redirect()->back();
 
     }
@@ -89,6 +89,8 @@ class categorycontroller extends Controller
       $ud=Category::find($id);
       $ud->name=$request->nameinput;
       $ud->save();
+              Session::flash('update','Success! Data edited'); 
+
       return redirect()->route('categories');
 
         //
@@ -104,7 +106,10 @@ class categorycontroller extends Controller
     {
         $del=Category::find($id);
         $del->delete();
+                Session::flash('delete','Success! Data Dropped'); 
+
         return redirect()->back();
+
         //
     }
 }
